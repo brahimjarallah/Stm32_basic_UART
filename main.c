@@ -14,7 +14,17 @@ void USART2_write(int ch);
 void delayMs(int delay);
 
 int main(void){
-
+	USART2_init();
+	while(1){
+	USART2_write('H');
+	USART2_write('E');
+	USART2_write('L');
+	USART2_write('L');
+	USART2_write('O');
+	USART2_write('!');
+	USART2_write(' ');
+	delayMs()
+	}
 }
 
 void USART2_init(void){
