@@ -1,8 +1,7 @@
-
 #include "stm32f4xx.h"                  // Device header
+
 //RCC->APB1ENR
 //RCC->AHB1ENR
-
 //GPIOx_AFR
 //GPIOx_MODER
 //USART_BRR
@@ -10,8 +9,12 @@
 //USART_SR
 //USART_DR
 
+void USART2_init(void);
+void USART2_write(int ch);
+void delayMs(int delay);
+
 int main(void){
-	
+
 }
 
 void USART2_init(void){
@@ -28,5 +31,12 @@ void USART2_init(void){
 void USART2_write(int ch){
 	while(!(USART2->SR & 0x80)){  // while TX buffer is not empty (!0)
 		USART2->DR =| (ch & 0xFF);  // send the parameterd character
+	}
+}
+
+void delayMs(int delay){
+	int i;
+	for(;delay>0;delay--){
+		for(i=0; i<3195; i++);
 	}
 }
