@@ -12,21 +12,22 @@
 
 void USART2_init(void);
 void USART2_write(int ch);
-//void delayMs(int delay);
+void delayMs(int delay);
 
 int main(void){
 	USART2_init();
 	while(1){
 	USART2_write('H');
 	USART2_write('I');
-	//USART2_write('E');
-	//USART2_write('L');
-	//USART2_write('L');
-	//USART2_write('O');
-	//USART2_write('!');
-	//USART2_write(' ');
-	//delayMs(10);
-	for(int i=0; i<900000; i++); // dummy delay
+	USART2_write('E');
+	USART2_write('L');
+	USART2_write('L');
+	USART2_write('O');
+	USART2_write('!');
+	USART2_write(' ');
+	
+		delayMs(10);
+		//for(int i=0; i<900000; i++); // dummy delay
 
 	}
 }
@@ -48,9 +49,9 @@ void USART2_write(int ch){
 	}
 }
 
-//void delayMs(int delay){
-//	int i;
-//	for(;delay>0;delay--){
-//		for(i=0; i<3195; i++);
-//	}
-//}
+void delayMs(int delay){
+	int i;
+	for(;delay>0;delay--){
+		for(i=0; i<3195; i++);
+	}
+}
